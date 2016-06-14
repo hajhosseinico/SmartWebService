@@ -1,0 +1,1 @@
+include ':app', ':smart_web_service'
