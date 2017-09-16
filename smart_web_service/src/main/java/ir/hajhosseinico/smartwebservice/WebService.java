@@ -216,7 +216,8 @@ public class WebService<T> extends Request<T> {
             Gson gson = new Gson();
             JsonReader reader = new JsonReader(new StringReader(response.toString()));
             reader.setLenient(true);
-            json = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+//            json = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+            json = new String(response.data, "UTF-8");
             t = gson.fromJson(json, classType);
 
             if (shouldCache == CACHE_STATUS_TRUE) {
